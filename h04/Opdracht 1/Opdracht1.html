@@ -22,6 +22,21 @@
             width: 1200px;
             margin: auto;
         }
+        table{
+            border: 1px solid black;
+            border-spacing: 0px;
+        }
+        td, th{
+            padding: 15px;
+            border: 1px solid black;
+            border-spacing: 0px;
+        }
+        th.groen{
+            background-color: #b3ffb3;
+        }
+        th.blauw{
+            background-color: #b3ffff;
+        }
     </style>
 </head>
 <body>
@@ -44,8 +59,8 @@
     <table border="4" style="border-spacing: 0px" style="text-align: start">
         <tr>
             <th></th>
-            <th colspan="2">Elektriciteit</th>
-            <th colspan="2">Aardgas</th>
+            <th class="groen" colspan="2">Elektriciteit</th>
+            <th class="blauw" colspan="2">Aardgas</th>
         </tr>
         <tr>
             <th>Plaats</th>
