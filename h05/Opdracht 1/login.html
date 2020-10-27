@@ -4,27 +4,32 @@
     <meta charset="UTF-8">
     <title>Burton login</title>
     <style>
-       div.form-group {
-           width: 500px;
-           padding: 20px;
-       }
-       input {
-           float: right;
-           width: 300px;
-       }
+
     </style>
 </head>
 <body>
 
+<h3>Voorbeeldformulier</h3>
+<br>
 <form action="http://www.savatarian.com/html5/form.php" method="get">
-    <div class="form-group">
-        <label for="voornaam">Voornaam</label>
-        <input type="text" name="voornaam">
-    </div>
-    <div class="form-group">
-        <label for="achternaam">Achternaam</label>
-        <input type="text" name="achternaam">
-    </div>
+    <input type="text" name="Voornaam">
+    <input type="text" name="tussenvoegsel">
+    <input type="text" name="Achternaam">
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label>
+</form>
+<p>Lekker eten: </p>
+
+<form action="http://www.savatarian.com/html5/form.php">
+    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+    <label for=""> Aardappelen</label><br>
+    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+    <label for=""> Sperciebonen</label><br>
+    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+    <label for=""> Hamburger</label><br><br>
+    <input type="submit" value="Submit">
 </form>
 </body>
 </html>
