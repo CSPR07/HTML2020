@@ -25,5 +25,8 @@ h1{
 .textinputs{
     width: 300px;
     border: solid 1px cornflowerblue;
-    padding-bottom: 50px;
+}
+
+label{
+    padding-bottom: 20px;
 }
