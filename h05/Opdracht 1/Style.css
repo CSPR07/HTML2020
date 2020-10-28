@@ -30,7 +30,3 @@ h1{
 label.textinputs{
     padding-bottom: 20px;
 }
-div#geslacht{
-    grid-column: 3/5;
-    grid-row: 4/5;
-}
