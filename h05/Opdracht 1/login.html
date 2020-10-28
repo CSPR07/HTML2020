@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Burton login</title>
     <style>
-        {
-
+        div.textbox{
+            text-align: left;
         }
     </style>
 </head>
@@ -14,16 +14,13 @@
 <h3>Voorbeeldformulier</h3>
 <br>
 <form action="http://www.savatarian.com/html5/form.php" method="get">
-    <p>Voornaam</p>
-    <input type="text" name="Voornaam">
+    <div class="textbox">
+    <p>Voornaam</p> <input type="text" name="Voornaam">
     <br>
-    <p>tussenvoegsel</p>
-    <input type="text" name="tussenvoegsel">
+    <p>tussenvoegsel</p> <input type="text" name="tussenvoegsel">
     <br>
-    <p>Achternaam</p>
-    <input type="text" name="Achternaam">
-    <br>
-    <br>
+    <p>Achternaam</p> <input type="text" name="Achternaam">
+    </div>
     <input type="radio" id="male" name="gender" value="male">
     <label for="male">Male</label>
     <input type="radio" id="female" name="gender" value="female">
@@ -32,11 +29,11 @@
 <p>Lekker eten: </p>
 
     <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-    <label for=""> Aardappelen</label><br>
+    <label> Aardappelen</label><br>
     <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-    <label for=""> Sperciebonen</label><br>
+    <label> Sperciebonen</label><br>
     <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-    <label for=""> Hamburger</label><br><br>
+    <label> Hamburger</label><br><br>
     <input type="submit" value="Submit">
 </div>
 </form>
