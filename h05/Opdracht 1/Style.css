@@ -27,6 +27,6 @@ h1{
     border: solid 1px cornflowerblue;
 }
 
-label{
+label .textinputs{
     padding-bottom: 20px;
 }
