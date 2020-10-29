@@ -1,16 +1,18 @@
 *{
     font-family: sans-serif;
+    margin: 10px;
+    align-self: start;
+    text-align: start;
 }
 body{
-    margin: 0px;
-    padding: 30px;
+    margin: 0;
     font-size: 18px;
 }
 
 form{
     display: grid;
-    grid-template-columns: 16% 34% 10% 40%;
-    grid-template-rows: 150px auto;
+    grid-template-columns: 20% 30% 20% 30%;
+    grid-template-rows: 16% 12% 12% 12% 12% 12% 12% 12% 12%;
 }
 h1{
     grid-column: 1/5;
@@ -29,4 +31,53 @@ h1{
 
 label.textinputs{
     padding-bottom: 20px;
+}
+div#geslacht{
+    grid-column: 2/4;
+}
+
+div#oogkleuren{
+    grid-column: 1/3;
+}
+
+div#datum{
+    grid-column: 1/4;
+}
+
+div#text{
+    grid-column: 1/4;
+}
+div#oogkleuren label{
+    grid-column: 1/2;
+    margin-left: 0;
+}
+div#datum label{
+    margin-left: 0;
+}
+div#text label{
+    margin-left: 0;
+}
+input.textinputs{
+    width: 250px;
+}
+div.eten label{
+}
+div#text input{
+    height: 100px;
+}
+div#text label {
+    text-align: start;
+}
+input#sub{
+    width: 75px;
+    text-align: center;
+    grid-row: 9/9;
+    grid-column: 4/4;
+}
+input#ann{
+    grid-area: end;
+    width: 75px;
+    text-align: center;
+    grid-row: 9/9;
+    grid-column: 3/4;
 }

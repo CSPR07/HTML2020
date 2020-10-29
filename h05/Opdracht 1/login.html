@@ -43,21 +43,32 @@
         <label>Vrouw</label>
     </div>
 
-    <label for="oogkleur">Kleur ogen: </label>
-    <select id="oogkleur" name="oogkleur">
-        <option>kies een kleur</option>
-        <option value="groen">Groen</option>
-        <option value="bruin">Bruin</option>
-        <option value="blauw">Blauw</option>
-    </select>
+    <div id="oogkleuren">
+        <label for="oogkleur">Kleur ogen: </label>
+        <select id="oogkleur" name="oogkleur">
+            <option>kies een kleur</option>
+            <option value="groen">Groen</option>
+            <option value="bruin">Bruin</option>
+            <option value="blauw">Blauw</option>
+        </select>
+    </div>
 
-    <label for="birthday">Birthday:</label>
-    <input type="date" id="birthday" name="birthday">
 
-    <label>Omschrijving      </label>
-    <input type="text">
+    <div id="datum">
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" name="birthday">
+    </div>
 
+    <div id="text">
+        <label>Omschrijving:</label>
+        <input type="textarea">
+    </div>
+
+    <input type="submit" value="Submit" id="sub">
+    <input type="reset" value="Annuleer" id="ann">
 </form>
+
+
 
 </body>
 </html>
