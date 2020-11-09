@@ -3,8 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <title>opdracht 1</title>
+    <style>
+        body{
+            font-family: sans-serif;
+            text-align: center;
+        }
+        img {
+            height: 300px;
+            width: 300px;
+            border: 0px;
+        }
+        #pics {
+            width: 900px;
+            height: 900px;
+            border: solid 1px black;
+            font-size: 0px;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
 
+<h1>HondShuffle</h1>
+<div id="pics">
+    <img src="img/hond1.jpg" alt="">
+    <img src="img/hond2.jpg" alt="">
+    <img src="img/hond3.jpg" alt="">
+    <img src="img/hond4.jpg" alt="">
+    <img src="img/hond5.jpg" alt="">
+    <img src="img/hond6.jpg" alt="">
+    <img src="img/hond7.jpg" alt="">
+    <img src="img/hond8.jpg" alt="">
+    <img src="img/hond9.jpg" alt="">
+</div>
+<script>
+    var plaatjes = document.getElementsByTagName("img");
+    var random = 0;
+    var randomNumbers = [];
+
+    while (randomNumbers.length < 9){
+        random = Math.floor(Math.random()* 9) +1;
+        if (randomNumbers.lastIndexOf(random) == -1) {
+            randomNumbers.push(random);
+        }
+    }
+
+    for (var plaatje in plaatjes){
+        plaatjes[plaatje].src = "img/hond"+randomNumbers[random]+".jpg"
+        random++
+    }
+
+</script>
 </body>
 </html>
