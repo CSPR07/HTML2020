@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Opdracht 3</title>
+    <style>
+        #slide1{
+            width: 238px;
+            height: 128px;
+            border: 3px solid black;
+        }
+        #slide2{
+            width: 238px;
+            height: 128px;
+            border: 3px solid black;
+        }
+        #slide3{
+            width: 238px;
+            height: 128px;
+            border: 3px solid black;
+        }
+    </style>
+</head>
+
+
+<body>
+
+<div id="slide1"></div>
+<script>
+    var plaatjes1 = [1,2];
+    var teller = 0;
+    var slide1 = document.getElementById("slide1");
+    slide1.style.backgroundImage = "url('../img/haar1.png')";
+
+    slide1.addEventListener("click", function () {
+        slide1.style.backgroundImage = "url('../img/haar" + gethond1() + ".png')";
+    });
+
+    function gethond1(){
+        if (teller >= plaatjes1.length) {
+            teller = 1;
+        } else {
+            teller++;
+        }
+        console.log(teller);
+        return teller;
+    }
+</script>
+
+<div id="slide2"></div>
+<script>
+    var plaatjes2 = [1,2,3];
+    var teller = 0;
+    var slide2 = document.getElementById("slide2");
+    slide2.style.backgroundImage = "url('../img/ogen1.png')";
+
+    slide2.addEventListener("click", function () {
+        slide2.style.backgroundImage = "url('../img/ogen" + gethond2() + ".png')";
+    });
+
+    function gethond2(){
+        if (teller >= plaatjes2.length) {
+            teller = 1;
+        } else {
+            teller++;
+        }
+        console.log(teller);
+        return teller;
+    }
+</script>
+
+<div id="slide3"></div>
+<script>
+    var plaatjes3 = [1,2,3,4];
+    var teller = 0;
+    var slide3 = document.getElementById("slide3");
+    slide3.style.backgroundImage = "url('../img/mond1.png')";
+
+    slide3.addEventListener("click", function () {
+        slide3.style.backgroundImage = "url('../img/mond" + gethond3() + ".png')";
+    });
+
+    function gethond3(){
+        if (teller >= plaatjes3.length) {
+            teller = 1;
+        } else {
+            teller++;
+        }
+        console.log(teller);
+        return teller;
+    }
+</script>
+</body>
+</html>
