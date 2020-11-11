@@ -8,7 +8,7 @@
             font-family: 'Raleway', sans-serif;
             text-align: center;
         }
-        div.picture-holder {
+        div.aappicture {
             box-sizing: border-box;
             height: 450px;
             width: 300px;
@@ -21,7 +21,7 @@
             height: 150px;
             background-color: blue;
         }
-        #fotos{
+        #pics{
             width: 900px;
             height: 1350px;
             border: 1px solid black;
@@ -35,33 +35,41 @@
 <h1>DogChooser</h1>
 <h3>Choose your favourite dog</h3>
 
-<div id="fotos">
+<div id="pics">
 </div>
 
 <script>
-    fotos = document.getElementById("fotos");
+    pics = document.getElementById("pics");
     createPicsHolder();
     createHondImages();
 
     function createPicsHolder(){
         for (var i = 0; i < 9 ; i++){
             pictureHolder = document.createElement("div");
-            pictureHolder.className = "picture-holder";
+            pictureHolder.className = "aappicture";
             pictureHolder.id = "picture-holder-" + i;
-            fotos.appendChild(pictureHolder);
+            pics.appendChild(pictureHolder);
         }
     }
 
     function createHondImages(){
-        pictureHolder = document.getElementsByClassName("hondpicture");
-        for (var i = 1; i < pictureHolder.length; i++){
+        pictureHolder = document.getElementsByClassName("aappicture");
+        for (var i = 0; i < pictureHolder.length; i++){
             favoriet = document.createElement("div");
             favoriet.className = "favoriet";
-            hondfoto = document.createElement("img");
-            hondfoto.src = "opdracht1/img/doge" + i + ".png";
+            aapplaatje = document.createElement("img");
+            aapplaatje.src = "../img/doge" + (i+1) + ".png";
+            aapplaatje.id = i;
+            aapplaatje .addEventListener("click", function (){
+                maakFavoriet(this.id);
+            });
             pictureHolder[i].appendChild(favoriet);
-            pictureHolder[i].appendChild(hondfoto);
+            pictureHolder[i].appendChild(aapplaatje);
         }
+    }
+
+    function maakFavoriet(){
+
     }
 </script>
 
