@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Opdracht 1 H5</title>
+    <style>
+        body{
+            font-family: 'Raleway', sans-serif;
+            text-align: center;
+        }
+        div.hondpicture{
+            box-sizing: border-box;
+            height: 450px;
+            width: 300px;
+            float: left;
+            background-color: blue;
+            border: solid 1px black;
+        }
+        #fotos{
+            width: 900px;
+            height: 1350px;
+            border: 1px solid black;
+            font-size: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+<h1>DogChooser</h1>
+<h3>Choose your favourite dog</h3>
+
+<div id="fotos">
+</div>
+
+<script>
+    fotos = document.getElementById("fotos");
+    createPicsHolder();
+    createHondImages();
+
+    function createPicsHolder(){
+        for (var i = 0; i < 9 ; i++){
+            pictureHolder = document.createElement("div");
+            pictureHolder.className = "hondpicture";
+            pictureHolder.id = "picture-holder-" + i;
+            fotos.appendChild(pictureHolder);
+        }
+    }
+
+    function createHondImages(){
+        pictureHolder = document.getElementsByClassName("hondpicture");
+        for (var i = 0; i < pictureHolder.length; i++){
+            hondfoto = document.createElement("img");
+            hondfoto.src = "../img/doge" + i + ".png";
+            pictureHolder[i].appendChild(hondfoto);
+        }
+    }
+</script>
+
+</body>
+</html>
