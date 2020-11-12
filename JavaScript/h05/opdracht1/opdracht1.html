@@ -8,12 +8,11 @@
             font-family: 'Raleway', sans-serif;
             text-align: center;
         }
-        div.aappicture {
+        div.picture-holder {
             box-sizing: border-box;
             height: 450px;
             width: 300px;
             float: left;
-            background-color: blue;
             border: 1px solid black;
         }
         div.favoriet{
@@ -49,13 +48,13 @@
         for (var i = 0; i < 9 ; i++){
             pictureHolder = document.createElement("div");
             pictureHolder.className = "aappicture";
-            pictureHolder.id = "picture-holder-" + i;
+            pictureHolder.id = "picture-holder" + i;
             pics.appendChild(pictureHolder);
         }
     }
 
     function createAapImages(){
-        pictureHolder = document.getElementsByClassName("aappicture");
+        pictureHolder = document.getElementsByClassName("picture-holder");
         for (var i = 0; i < pictureHolder.length; i++){
             favoriet = document.createElement("div");
             favoriet.className = "favoriet";
@@ -72,12 +71,14 @@
     }
 
     function maakFavoriet(id){
+        console.log("Maak mij favoriet Het gaat om aap " + id );
         notsofavoriet = document.getElementsByClassName("favoriet");
-        for (var i = 0; i< notsofavoriet.length; i++){
+
+        for (var i = 0; i < notsofavoriet.length; i++){
             notsofavoriet[i].style.backgroundImage = "none";
         }
         favoriet = document.getElementById("favoriet_" + id);
-        favoriet.style.backgroundImage = "url('../img/heart.png')"
+        favoriet.style.backgroundImage = "url('img/heart.png')"
     }
 </script>
 
