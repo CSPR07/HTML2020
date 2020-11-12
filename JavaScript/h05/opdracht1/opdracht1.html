@@ -8,7 +8,7 @@
             font-family: 'Raleway', sans-serif;
             text-align: center;
         }
-        div.picture-holder {
+        /*div.picture-holder {
             box-sizing: border-box;
             height: 450px;
             width: 300px;
@@ -21,6 +21,12 @@
             background-image: none;
             background-repeat: no-repeat;
             background-position: center;
+        }*/
+        div.aappictures{
+            height: 450px;
+            width: 300px;
+            float: left;
+            background-color: red;
         }
         #pics{
             width: 900px;
@@ -35,13 +41,16 @@
 
 <h1>DogChooser</h1>
 <h3>Choose your favourite dog</h3>
-
 <div id="pics">
+
 </div>
 
 <script>
     pics = document.getElementById("pics");
-    createPicsHolder();
+    nieuwElement = document.createElement("div");
+    nieuwElement.className = "aappicture";
+    pics.appendChild(nieuwElement);
+   /* createPicsHolder();
     createAapImages();
 
     function createPicsHolder(){
@@ -59,14 +68,14 @@
             favoriet = document.createElement("div");
             favoriet.className = "favoriet";
             favoriet.id = "favoriet_" + (i+1);
-            aapplaatje = document.createElement("img");
-            aapplaatje.src = "../img/doge" + (i+1) + ".png";
-            aapplaatje.id = (i + 1);
-            aapplaatje .addEventListener("click", function (){
+            aapPlaatje = document.createElement("img");
+            aapPlaatje.src = "../img/doge"+(i+1) +".png";
+            aapPlaatje.id = (i + 1);
+            aapPlaatje .addEventListener("click", function (){
                 maakFavoriet(this.id);
             });
             pictureHolder[i].appendChild(favoriet);
-            pictureHolder[i].appendChild(aapplaatje);
+            pictureHolder[i].appendChild(aapPlaatje);
         }
     }
 
@@ -78,8 +87,8 @@
             notsofavoriet[i].style.backgroundImage = "none";
         }
         favoriet = document.getElementById("favoriet_" + id);
-        favoriet.style.backgroundImage = "url('img/heart.png')"
-    }
+        favoriet.style.backgroundImage = "url('../img/heart.png')";
+    }*/
 </script>
 
 </body>
