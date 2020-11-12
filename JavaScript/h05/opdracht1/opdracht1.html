@@ -8,27 +8,28 @@
             font-family: 'Raleway', sans-serif;
             text-align: center;
         }
-        /*div.picture-holder {
+        div.picture-holder {
             box-sizing: border-box;
             height: 450px;
             width: 300px;
             float: left;
             border: 1px solid black;
         }
-        div.favoriet{
-            width: 300px;
-            height: 150px;
-            background-image: none;
-            background-repeat: no-repeat;
-            background-position: center;
-        }*/
-        div.aappictures{
+        div.aappicture {
             height: 450px;
             width: 300px;
             float: left;
             background-color: red;
         }
-        #pics{
+        div.favoriet{
+            width: 300px;
+            height: 150px;
+            background-color: red;
+            background-image: none;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #pics {
             width: 900px;
             height: 1350px;
             border: 1px solid black;
@@ -47,17 +48,14 @@
 
 <script>
     pics = document.getElementById("pics");
-    nieuwElement = document.createElement("div");
-    nieuwElement.className = "aappicture";
-    pics.appendChild(nieuwElement);
-   /* createPicsHolder();
+    createPicsHolder();
     createAapImages();
 
-    function createPicsHolder(){
-        for (var i = 0; i < 9 ; i++){
+    function createPicsHolder() {
+        for (var i = 0; i < 9; i++) {
             pictureHolder = document.createElement("div");
             pictureHolder.className = "aappicture";
-            pictureHolder.id = "picture-holder" + i;
+            pictureHolder.id = "picture-holder-" + i;
             pics.appendChild(pictureHolder);
         }
     }
@@ -69,9 +67,9 @@
             favoriet.className = "favoriet";
             favoriet.id = "favoriet_" + (i+1);
             aapPlaatje = document.createElement("img");
-            aapPlaatje.src = "../img/doge"+(i+1) +".png";
+            aapPlaatje.src = "../img/doge"+ (i+1) +".png";
             aapPlaatje.id = (i + 1);
-            aapPlaatje .addEventListener("click", function (){
+            aapPlaatje.addEventListener("click", function () {
                 maakFavoriet(this.id);
             });
             pictureHolder[i].appendChild(favoriet);
@@ -88,8 +86,8 @@
         }
         favoriet = document.getElementById("favoriet_" + id);
         favoriet.style.backgroundImage = "url('../img/heart.png')";
-    }*/
+    }
 </script>
-
+<!--<script src="../monkeychooser.js"></script>-->
 </body>
 </html>
