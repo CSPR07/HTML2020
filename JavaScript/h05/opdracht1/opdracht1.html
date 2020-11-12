@@ -15,12 +15,6 @@
             float: left;
             border: 1px solid black;
         }
-        div.aappicture {
-            height: 450px;
-            width: 300px;
-            float: left;
-            background-color: red;
-        }
         div.favoriet{
             width: 300px;
             height: 150px;
@@ -55,7 +49,7 @@
         for (var i = 0; i < 9; i++) {
             pictureHolder = document.createElement("div");
             pictureHolder.className = "aappicture";
-            pictureHolder.id = "picture-holder-" + i;
+            pictureHolder.id = "picture-holder" + i;
             pics.appendChild(pictureHolder);
         }
     }
@@ -65,7 +59,6 @@
         for (var i = 0; i < pictureHolder.length; i++){
             favoriet = document.createElement("div");
             favoriet.className = "favoriet";
-            favoriet.id = "favoriet_" + (i+1);
             aapPlaatje = document.createElement("img");
             aapPlaatje.src = "../img/doge"+ (i+1) +".png";
             aapPlaatje.id = (i + 1);
