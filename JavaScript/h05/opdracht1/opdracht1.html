@@ -8,20 +8,13 @@
             font-family: 'Raleway', sans-serif;
             text-align: center;
         }
-        div.picture-holder {
-            box-sizing: border-box;
-            height: 450px;
-            width: 300px;
-            float: left;
-            border: 1px solid black;
-        }
         div.favoriet{
             width: 300px;
             height: 150px;
-            background-color: red;
             background-image: none;
             background-repeat: no-repeat;
             background-position: center;
+            background-color: red;
         }
         #pics {
             width: 900px;
@@ -29,6 +22,14 @@
             border: 1px solid black;
             font-size: 0;
             margin: auto;
+            background-color: red;
+        }
+        div.picture-holder {
+            box-sizing: border-box;
+            height: 450px;
+            width: 300px;
+            float: left;
+            border: 1px solid black;
         }
     </style>
 </head>
@@ -43,34 +44,35 @@
 <script>
     pics = document.getElementById("pics");
     createPicsHolder();
-    createAapImages();
+    createHondImages();
 
     function createPicsHolder() {
         for (var i = 0; i < 9; i++) {
             pictureHolder = document.createElement("div");
-            pictureHolder.className = "aappicture";
+            pictureHolder.className = "hondPicture";
             pictureHolder.id = "picture-holder" + i;
             pics.appendChild(pictureHolder);
         }
     }
 
-    function createAapImages(){
+    function createHondImages(){
         pictureHolder = document.getElementsByClassName("picture-holder");
         for (var i = 0; i < pictureHolder.length; i++){
             favoriet = document.createElement("div");
             favoriet.className = "favoriet";
-            aapPlaatje = document.createElement("img");
-            aapPlaatje.src = "../img/doge"+ (i+1) +".png";
-            aapPlaatje.id = (i + 1);
-            aapPlaatje.addEventListener("click", function () {
+            favoriet.id = "favoriet_" + (i+1);
+            hondPlaatje = document.createElement("img");
+            hondPlaatje.src = "img/doge1"+ (i+1) +".jpg";
+            hondPlaatje.id = (i + 1);
+            hondPlaatje.addEventListener("click", function () {
                 maakFavoriet(this.id);
             });
             pictureHolder[i].appendChild(favoriet);
-            pictureHolder[i].appendChild(aapPlaatje);
+            pictureHolder[i].appendChild(hondPlaatje);
         }
     }
 
-    function maakFavoriet(id){
+    function maakFavoriet( id ){
         console.log("Maak mij favoriet Het gaat om aap " + id );
         notsofavoriet = document.getElementsByClassName("favoriet");
 
@@ -78,9 +80,8 @@
             notsofavoriet[i].style.backgroundImage = "none";
         }
         favoriet = document.getElementById("favoriet_" + id);
-        favoriet.style.backgroundImage = "url('../img/heart.png')";
+        favoriet.style.backgroundImage = "url('../img/heart.jpg')";
     }
 </script>
-<!--<script src="../monkeychooser.js"></script>-->
 </body>
 </html>
