@@ -8,13 +8,19 @@
             font-family: 'Raleway', sans-serif;
             text-align: center;
         }
+        div.hondPicture {
+            box-sizing: border-box;
+            height: 450px;
+            width: 300px;
+            float: left;
+            border: 1px solid black;
+        }
         div.favoriet{
             width: 300px;
             height: 150px;
             background-image: none;
             background-repeat: no-repeat;
             background-position: center;
-            background-color: red;
         }
         #pics {
             width: 900px;
@@ -22,14 +28,6 @@
             border: 1px solid black;
             font-size: 0;
             margin: auto;
-            background-color: red;
-        }
-        div.picture-holder {
-            box-sizing: border-box;
-            height: 450px;
-            width: 300px;
-            float: left;
-            border: 1px solid black;
         }
     </style>
 </head>
@@ -56,13 +54,16 @@
     }
 
     function createHondImages(){
-        pictureHolder = document.getElementsByClassName("picture-holder");
+ console.log(2);
+        pictureHolder = document.getElementsByClassName("hondPicture");
+    console.log(pictureHolder);
         for (var i = 0; i < pictureHolder.length; i++){
             favoriet = document.createElement("div");
             favoriet.className = "favoriet";
             favoriet.id = "favoriet_" + (i+1);
             hondPlaatje = document.createElement("img");
-            hondPlaatje.src = "img/doge1"+ (i+1) +".jpg";
+            hondPlaatje.src = "img/doge"+ (i+1) +".jpg";
+       console.log(1);
             hondPlaatje.id = (i + 1);
             hondPlaatje.addEventListener("click", function () {
                 maakFavoriet(this.id);
@@ -80,7 +81,7 @@
             notsofavoriet[i].style.backgroundImage = "none";
         }
         favoriet = document.getElementById("favoriet_" + id);
-        favoriet.style.backgroundImage = "url('../img/heart.jpg')";
+        favoriet.style.backgroundImage = "url('img/heart2.jpg')";
     }
 </script>
 </body>
