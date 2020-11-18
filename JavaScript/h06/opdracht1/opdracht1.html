@@ -24,62 +24,7 @@
         }
     </style>
     <script>
-        var memory_array = new Array();
-
-        memory_array[0] = new Image();
-        memory_array[0].src = 'img/baby1.jpg';
-
-        memory_array[1] = new Image();
-        memory_array[1].src = 'img/baby2.jpg';
-
-        memory_array[2] = new Image();
-        memory_array[2].src = 'img/baby3.jpg';
-
-        memory_array[3] = new Image();
-        memory_array[3].src = 'img/baby4.jpg';
-
-        memory_array[4] = new Image();
-        memory_array[4].src = 'img/baby5.jpg';
-
-        memory_array[5] = new Image();
-        memory_array[5].src = 'img/baby6.jpg';
-
-        memory_array[6] = new Image();
-        memory_array[6].src = 'img/baby.7jpg';
-
-        memory_array[7] = new Image();
-        memory_array[7].src = 'img/baby8.jpg';
-
-        memory_array[8] = new Image();
-        memory_array[8].src = 'img/baby9.jpg';
-
-        memory_array[9] = new Image();
-        memory_array[9].src = 'img/baby10.jpg';
-
-        memory_array[10] = new Image();
-        memory_array[10].src = 'img/baby11.jpg';
-
-        memory_array[11] = new Image();
-        memory_array[11].src = 'img/baby12.jpg';
-
-        memory_array[12] = new Image();
-        memory_array[12].src = 'img/baby13.jpg';
-
-        memory_array[13] = new Image();
-        memory_array[13].src = 'img/baby14.jpg';
-
-        memory_array[14] = new Image();
-        memory_array[14].src = 'img/baby15.jpg';
-
-        memory_array[15] = new Image();
-        memory_array[15].src = 'img/baby16.jpg';
-
-        memory_array[16] = new Image();
-        memory_array[16].src = 'img/baby17.jpg';
-
-        memory_array[17] = new Image();
-        memory_array[17].src = 'img/baby18.jpg';
-
+        var memory_array = ['A','A','B','B','C','C','D','D','E','E','F','F','G','G','H','H','I','I'];
         var memory_values = [];
         var memory_tile_ids = [];
         var tiles_flipped = 0;
@@ -98,20 +43,20 @@
             var output = '';
             memory_array.memory_tile_shuffle();
             for(var i = 0; i < memory_array.length; i++){
-                output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+memory_array[i]+'\')"></div>';
+                output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+memory_array [i] + '\')"></div>';
             }
             document.getElementById('memory_board').innerHTML = output;
         }
-        function memoryFlipTile(tile,val){
-            if(tile.innerHTML == "" && memory_values.length < 2){
-                tile.style.background = '#FFF';
-                tile.innerHTML = val;
+        function memoryFlipTile(Image,val){
+            if(Image.innerHTML == "" && memory_values.length < 2){
+                Image.style.background = '#EEE';
+                Image.innerHTML = val;
                 if(memory_values.length == 0){
                     memory_values.push(val);
-                    memory_tile_ids.push(tile.id);
+                    memory_tile_ids.push(Image.id);
                 } else if(memory_values.length == 1){
                     memory_values.push(val);
-                    memory_tile_ids.push(tile.id);
+                    memory_tile_ids.push(Image.id);
                     if(memory_values[0] == memory_values[1]){
                         tiles_flipped += 2;
                         memory_values = [];
@@ -133,7 +78,7 @@
                             memory_values = [];
                             memory_tile_ids = [];
                         }
-                        setTimeout(flip2Back, 700);
+                        setTimeout(flip2Back, 800);
                     }
                 }
             }
