@@ -1,108 +1,106 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <style>
-        div#memory_board{
-            background: cornflowerblue;
-            border:#999 1px solid;
-            width:800px;
-            height:400px;
-            padding:24px;
-            margin:0px auto;
-        }
-        div#memory_board > div{
-            background-color: yellowgreen;
-            border:#000 1px solid;
-            width:71px;
-            height:71px;
-            float:left;
-            margin:10px;
-            padding:20px;
-            font-size:64px;
-            cursor:pointer;
-            text-align:center;
-        }
-    </style>
+    <meta charset="UTF-8">
 
+    <title>Memory Game</title>
 
-    <script>
-
-        var memory_values = [];
-        var memory_tile_ids = [];
-        var tiles_flipped = 0;
-        Array.prototype.memory_tile_shuffle = function(){
-            var i = this.length, j, temp;
-            while(--i > 0){
-                j = Math.floor(Math.random() * (i+1));
-                temp = this[j];
-                this[j] = this[i];
-                this[i] = temp;
-            }
-        }
-                 function newBoard(){
-            tiles_flipped = 0;
-            var output = '';
-            memory_array.memory_tile_shuffle();
-            for(var i = 0; i < memory_array.length; i++){
-                output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+memory_array[i]+'\')"></div>';
-            }
-            document.getElementById('memory_board').innerHTML = output;
-        }
-        function memoryFlipTile(tile,val){
-            if(tile.innerHTML == "" && memory_values.length < 2){
-                tile.style.background = '#FFF';
-                tile.innerHTML = val;
-                if(memory_values.length == 0){
-                    memory_values.push(val);
-                    memory_tile_ids.push(tile.id);
-                } else if(memory_values.length == 1){
-                    memory_values.push(val);
-                    memory_tile_ids.push(tile.id);
-                    if(memory_values[0] == memory_values[1]){
-                        tiles_flipped += 2;
-                        memory_values = [];
-                        memory_tile_ids = [];
-                        if(tiles_flipped == memory_array.length){
-                            alert("Klaar, even wachten voor een nieuw spel!");
-                            document.getElementById('memory_board').innerHTML = "";
-                            newBoard();
-                        }
-                    } else {
-                        function flip2Back(){
-                            var tile_1 = document.getElementById(memory_tile_ids[0]);
-                            var tile_2 = document.getElementById(memory_tile_ids[1]);
-                           tile_1.style.background = 'url(tile_bg.jpg) no-repeat';
-                            tile_1.innerHTML = "";
-                            tile_2.style.background = 'url(tile_bg.jpg) no-repeat';
-                            tile_2.innerHTML = "";
-                             memory_values = [];
-                             memory_tile_ids = [];
-                         }
-                        setTimeout(flip2Back, 700);
-                    }
-                }
-            }
-        }
-</script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div id="memory_board"></div>
-<script>newBoard();</script>
+<script src="scritps.js"></script>
 
-<script>
+<section class="memory-game">
+    <div class="memory-card" data-framework="logo1">>
+        <img class="front-face" src="1.png" alt="React">
+        <img class="back-face" src="logo1.jpg" alt="Memory Card">
+    </div>
 
-    var memory_array = [];
+        <div class="memory-card" data-framework="logo1">>
+            <img class="front-face" src="1.png" alt="React">
+            <img class="back-face" src="logo1.jpg" alt="Memory Card">
+        </div>
 
-    for (let i = 0; i < 9; i++) {
-        memory_array[i] = new Image();
-        memory_array[i].src = 'logo' + (i + 1) + '.jpg';
-    }
-    let imgWrapper = document.getElementById('memory_board');
+    <div class="memory-card" data-framework="logo2">
+        <img class="front-face" src="1.png" alt="React">
+        <img class="back-face" src="logo2.jpg" alt="Memory Card">
+    </div>
 
-    for (let i = 0; i < memory_array.length; i++) {
-        imgWrapper.appendChild(memory_array[i]);
-    }
+    <div class="memory-card" data-framework="logo2">
+        <img class="front-face" src="1.png" alt="React">
+        <img class="back-face" src="logo2.jpg" alt="Memory Card">
+    </div>
 
-</script>
+    <div class="memory-card" data-framework="logo3">
+        <img class="front-face" src="1.png" alt="Angular">
+        <img class="back-face" src="logo3.jpg" alt="Memory Card">
+    </div>
+
+    <div class="memory-card" data-framework="logo3">
+        <img class="front-face" src="1.png" alt="Angular">
+        <img class="back-face" src="logo3.jpg" alt="Memory Card">
+    </div>
+
+    <div class="memory-card" data-framework="logo4">
+        <img class="front-face" src="1.png" alt="Angular">
+        <img class="back-face" src="logo4.png" alt="Memory Card">
+    </div>
+
+    <div class="memory-card" data-framework="logo4">
+        <img class="front-face" src="1.png" alt="Angular">
+        <img class="back-face" src="logo4.png" alt="Memory Card">
+    </div>
+
+    <div class="memory-card" data-framework="logo5">
+        <img class="front-face" src="1.png" alt="Ember">
+        <img class="back-face" src="logo5.png" alt="Memory Card">
+    </div>
+
+    <div class="memory-card" data-framework="logo5">
+        <img class="front-face" src="1.png" alt="Ember">
+        <img class="back-face" src="logo5.png" alt="Memory Card">
+    </div>
+
+    <div class="memory-card" data-framework="logo6">
+        <img class="front-face" src="1.png" alt="Ember">
+        <img class="back-face" src="logo6.png" alt="Memory Card">
+    </div>
+
+    <div class="memory-card" data-framework="logo6">
+        <img class="front-face" src="1.png" alt="Ember">
+        <img class="back-face" src="logo6.png" alt="Memory Card">
+    </div>
+
+    <div class="memory-card" data-framework="logo7">
+        <img class="front-face" src="1.png" alt="Vue">
+        <img class="back-face" src="logo7.png" alt="Memory Card">
+    </div>
+
+    <div class="memory-card" data-framework="logo7">
+        <img class="front-face" src="1.png" alt="Vue">
+        <img class="back-face" src="logo7.png" alt="Memory Card">
+    </div>
+
+    <div class="memory-card" data-framework="logo8">
+        <img class="front-face" src="1.png" alt="Vue">
+        <img class="back-face" src="logo8.png" alt="Memory Card">
+    </div>
+
+    <div class="memory-card" data-framework="logo8">
+        <img class="front-face" src="1.png" alt="Vue">
+        <img class="back-face" src="logo8.png" alt="Memory Card">
+    </div>
+
+    <div class="memory-card" data-framework="logo9">
+        <img class="front-face" src="1.png" alt="Backbone">
+        <img class="back-face" src="logo9.png" alt="Memory Card">
+    </div>
+
+    <div class="memory-card" data-framework="logo9">
+        <img class="front-face" src="1.png" alt="Backbone">
+        <img class="back-face" src="logo9.png" alt="Memory Card">
+    </div>
+</section>
+
 </body>
 </html>
